@@ -1,4 +1,5 @@
 'use strict';
 var $$ = require('jquery');
-$$('h1').html('hhuahsudshau').css('backgroundColor','#ccc');
+require('./index.css');
+// $$('h1').html('hhuahsudshau').css('backgroundColor','#ccc');
 console.log(123123);
