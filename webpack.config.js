@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports={
     entry: {
         'common': ['./src/pages/common/index.js'],
@@ -21,7 +22,10 @@ module.exports={
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: 'js/base.js'
-        }) //利用CommonsChunkPlugin 加载通用模块
+        }), //利用CommonsChunkPlugin 加载通用模块
         //如果生成的公共文件base 必须在其他文件之前引入base.js 要不然会报错webpackJsonp is not defined？
+        new HtmlWebpackPlugin({
+            template: './src/view/index.html'
+        })
     ]
 }
